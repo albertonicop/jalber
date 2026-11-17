@@ -29,3 +29,19 @@ El carrito persiste en localStorage bajo `alberto-cart-v1`. El checkout está de
 Portada de moda en blanco y negro, logotipo de gran formato y sección de atmósfera mediterránea. La fotografía editorial es una referencia de estilo; no representa prendas del catálogo ni una campaña propia. Fuente: https://images.unsplash.com/photo-1617137968427-85924c800a22. Se cambia desde `brand.editorial` en `src/data.js`.
 
 Validación: compilación de producción y comprobación en Chrome de filtros, talla requerida, color, cantidades, totales, persistencia, eliminación, navegación móvil y ausencia de desbordamiento horizontal.
+
+## Publicación en GitHub Pages
+
+Sitio público: https://albertonicop.github.io/jalber/
+Repositorio: https://github.com/albertonicop/jalber
+
+La rama `main` conserva el código fuente. GitHub Pages publica la raíz de `gh-pages`, que contiene la compilación y `.nojekyll`.
+
+Para compilar con las rutas públicas correctas en PowerShell:
+
+```powershell
+$env:GITHUB_PAGES = 'true'
+npm run build
+```
+
+Publica el contenido de `dist/` en la rama `gh-pages` para actualizar el sitio. Los cambios solo en `main` no actualizan la web. Para volver al modo local, elimina la variable con `Remove-Item Env:GITHUB_PAGES`.
